@@ -20,28 +20,43 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="一句话总结：泛后台 (后端) 产品特征：业务逻辑复杂、业务规则繁多、跨系统调用和数据流转频繁。 业务分析师在做业务分析时，经常会遇到偏后台的产品或系统。这是因为乙方的业务分析师一般是为传统行业的大型甲方客户服务，这些客户常常有搭建或者改造管理后台的需求。面对后台产品或系统，业务分析师需要掌握后台产品的业务逻辑，具备一定的技术基础知识，在和开发沟通时才能得心应手。本文将结合最近读的《后台产品经理宝典">
+<meta property="og:type" content="article">
+<meta property="og:title" content="业务分析师在泛后台产品中要了解哪些技术知识">
+<meta property="og:url" content="http://example.com/2021/11/14/%E4%B8%9A%E5%8A%A1%E5%88%86%E6%9E%90%E5%B8%88%E5%9C%A8%E6%B3%9B%E5%90%8E%E5%8F%B0%E4%BA%A7%E5%93%81%E4%B8%AD%E8%A6%81%E4%BA%86%E8%A7%A3%E5%93%AA%E4%BA%9B%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86-%E4%B8%80/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一句话总结：泛后台 (后端) 产品特征：业务逻辑复杂、业务规则繁多、跨系统调用和数据流转频繁。 业务分析师在做业务分析时，经常会遇到偏后台的产品或系统。这是因为乙方的业务分析师一般是为传统行业的大型甲方客户服务，这些客户常常有搭建或者改造管理后台的需求。面对后台产品或系统，业务分析师需要掌握后台产品的业务逻辑，具备一定的技术基础知识，在和开发沟通时才能得心应手。本文将结合最近读的《后台产品经理宝典">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pictures-1301593891.cos.ap-nanjing.myqcloud.com/1.png">
+<meta property="og:image" content="https://pictures-1301593891.cos.ap-nanjing.myqcloud.com/2.png">
+<meta property="og:image" content="https://pictures-1301593891.cos.ap-nanjing.myqcloud.com/3.png">
+<meta property="og:image" content="https://pictures-1301593891.cos.ap-nanjing.myqcloud.com/4.png">
+<meta property="og:image" content="https://pictures-1301593891.cos.ap-nanjing.myqcloud.com/5.png">
+<meta property="og:image" content="https://pictures-1301593891.cos.ap-nanjing.myqcloud.com/6.png">
+<meta property="og:image" content="https://pictures-1301593891.cos.ap-nanjing.myqcloud.com/7.png">
+<meta property="og:image" content="https://pictures-1301593891.cos.ap-nanjing.myqcloud.com/640.webp">
+<meta property="og:image" content="https://pictures-1301593891.cos.ap-nanjing.myqcloud.com/641.png">
+<meta property="article:published_time" content="2021-11-14T14:34:16.000Z">
+<meta property="article:modified_time" content="2021-11-14T14:59:34.297Z">
 <meta property="article:author" content="yanan">
+<meta property="article:tag" content="技术">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pictures-1301593891.cos.ap-nanjing.myqcloud.com/1.png">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/11/14/%E4%B8%9A%E5%8A%A1%E5%88%86%E6%9E%90%E5%B8%88%E5%9C%A8%E6%B3%9B%E5%90%8E%E5%8F%B0%E4%BA%A7%E5%93%81%E4%B8%AD%E8%A6%81%E4%BA%86%E8%A7%A3%E5%93%AA%E4%BA%9B%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86-%E4%B8%80/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Hexo</title>
+  <title>业务分析师在泛后台产品中要了解哪些技术知识 | Hexo</title>
   
 
 
@@ -155,9 +170,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -173,10 +189,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/14/%E4%B8%9A%E5%8A%A1%E5%88%86%E6%9E%90%E5%B8%88%E5%9C%A8%E6%B3%9B%E5%90%8E%E5%8F%B0%E4%BA%A7%E5%93%81%E4%B8%AD%E8%A6%81%E4%BA%86%E8%A7%A3%E5%93%AA%E4%BA%9B%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86-%E4%B8%80/" class="post-title-link" itemprop="url">业务分析师在泛后台产品中要了解哪些技术知识</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          业务分析师在泛后台产品中要了解哪些技术知识
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -209,7 +224,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>一句话总结：泛后台 (后端) 产品特征：业务逻辑复杂、业务规则繁多、跨系统调用和数据流转频繁。</p>
+        <p>一句话总结：泛后台 (后端) 产品特征：业务逻辑复杂、业务规则繁多、跨系统调用和数据流转频繁。</p>
 <p>业务分析师在做业务分析时，经常会遇到偏后台的产品或系统。这是因为乙方的业务分析师一般是为传统行业的大型甲方客户服务，这些客户常常有搭建或者改造管理后台的需求。面对后台产品或系统，业务分析师需要掌握后台产品的业务逻辑，具备一定的技术基础知识，在和开发沟通时才能得心应手。本文将结合最近读的《后台产品经理宝典》一书和自己在日常需求分析过程中总结的经验，谈谈业务分析师在泛后台产品的需求分析中掌握哪些技术知识更有帮助。</p>
 <h2 id="后端产品的定义"><a href="#后端产品的定义" class="headerlink" title="后端产品的定义"></a>后端产品的定义</h2><p>先搞清楚什么是后端产品，我们需要先了解“产品体系”这个概念。产品体系是指组成完整业务闭环的一套产品。比如网上购物的产品体系既包括买家版、卖家版，还有电商后台管理系统；打车的产品体系既包括乘客版、司机版，还有管理信息系统等。提供给目标用户如买家&amp;卖家、乘客&amp;司机使用的平台是前端产品，为前端产品提供数据、逻辑、算法等支持的平台是后端产品。</p>
 <p><img src="https://pictures-1301593891.cos.ap-nanjing.myqcloud.com/1.png"></p>
@@ -312,347 +327,33 @@
 <p>参考资料：</p>
 <p>[1] 赵世哲.《后台产品经理宝典》.北京：电子工业出版社, 2020: 60-71</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag"># 技术</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/14/%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B%E5%86%99%E4%BD%9C%E7%BB%86%E8%8A%82/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="yanan">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/14/%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B%E5%86%99%E4%BD%9C%E7%BB%86%E8%8A%82/" class="post-title-link" itemprop="url">用户故事写作细节</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-11-14 16:43:05 / Modified: 16:44:26" itemprop="dateCreated datePublished" datetime="2021-11-14T16:43:05+08:00">2021-11-14</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/BA-basic-skills/" itemprop="url" rel="index"><span itemprop="name">BA basic skills</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="增删改查类"><a href="#增删改查类" class="headerlink" title="增删改查类"></a>增删改查类</h3><h3 id="文本修改"><a href="#文本修改" class="headerlink" title="文本修改"></a>文本修改</h3>
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/14/%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B%E5%86%99%E4%BD%9C%E7%BB%86%E8%8A%82/" rel="prev" title="用户故事写作细节">
+      <i class="fa fa-chevron-left"></i> 用户故事写作细节
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/14/%E5%A6%82%E4%BD%95%E6%8B%86%E5%88%86%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="yanan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/14/%E5%A6%82%E4%BD%95%E6%8B%86%E5%88%86%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B/" class="post-title-link" itemprop="url">如何拆分用户故事</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-11-14 16:16:07 / Modified: 16:23:55" itemprop="dateCreated datePublished" datetime="2021-11-14T16:16:07+08:00">2021-11-14</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/BA-basic-skills/" itemprop="url" rel="index"><span itemprop="name">BA basic skills</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="拆分用户故事的目的"><a href="#拆分用户故事的目的" class="headerlink" title="拆分用户故事的目的"></a>拆分用户故事的目的</h3><p>核心思想是问题拆解。</p>
-<p>我们做任何事情，都要思考如何下手。如果这个问题相对较大且复杂的话，那么我们会倾向于把问题拆解，逐一解决。软件开发也是如此，大型复杂系统的开发需要分模块、分功能进行。即使是一个功能，也需要再细分，直到足够细能让开发在合适的时间内完成。</p>
-<p>多个开发可以并行工作，提高开发效率。</p>
-<p>便于估算工作量。这个目的对于乙方开发公司来说，可以相对准确地按照开发工作量安排前后端开发资源，并向客户有理有据地收钱；对于甲方公司来说，自己也可以评估好做一个项目的工作量和成本。</p>
-<h3 id="拆分方法"><a href="#拆分方法" class="headerlink" title="拆分方法"></a>拆分方法</h3><p>用户故事的拆分有多种方法，就像我们可以从多个维度拆分问题一样。有时很难说只用一种方法就可以使用户故事大小合适，我们通常需要结合多种方法进行拆分，同时还需要多和开发沟通，大致了解拆出的 story 工作量如何。我认为每种拆分方法都是要结合工作量评估的，因为 BA 拆出的卡是给开发做的，如果太大则让开发非常懊恼，开发一个多周都无法完成必然产生挫败感。如果太小的话，BA 和开发日常迭代中花在开结卡、QA 花在测试的时间上就会比较多，可能拖慢团队的开发速率。</p>
-<p>下面的是一些在用户故事拆分过程中的方法或者说考虑因素。</p>
-<h4 id="按工作流拆分"><a href="#按工作流拆分" class="headerlink" title="按工作流拆分"></a>按工作流拆分</h4><p>按工作流拆分可以理解为按业务流程进行拆分。比如对于用户进行线索管理这件事来说，工作流可能是添加线索、更改线索状态、进行沟通、记录每次沟通结果等，那么按照工作流拆分的用户故事就包括“用户可以添加新线索”、“用户可以更改线索状态”、“用户与线索沟通”、“用户记录与线索的沟通结果”。然后在此基础上，可以结合后面的拆分方法再进行拆分。</p>
-<h4 id="按功能拆分"><a href="#按功能拆分" class="headerlink" title="按功能拆分"></a>按功能拆分</h4><p>按功能拆分是每种拆分方法都需要考虑进去的。按功能拆分可以很大程度上践行“INVEST”原则中的“valuable”。</p>
-<h4 id="按工作量拆分"><a href="#按工作量拆分" class="headerlink" title="按工作量拆分"></a>按工作量拆分</h4><p>按工作量拆分同样也是每次拆分时必须考虑的因素。拆出的每个 story 都要先自己评估下大致工作量，拿不准的及时和开发沟通。</p>
-<h4 id="按页面部分拆分"><a href="#按页面部分拆分" class="headerlink" title="按页面部分拆分"></a>按页面部分拆分</h4><p>按页面部分拆分是我平时比较常用的方法，这个方法通过还需要结合按功能拆分。</p>
-<p>实现一个完整的功能需要闭环，那么很多时候需要涉及到多个页面上的细分功能。比如我想了解某个销售线索的状态时，我既可以在该销售线索的主页里看到，也可以在我的销售线索列表里看到 (假设这个系统包含可以批量查看的列表)。那么，在拆分 story 时，我就需要按照销售线索主页和销售线索列表页两个部分进行拆分。</p>
-<p>除了跨页面拆分外，即使同一个页面上通常不同功能也需要单独拆分出 story。比如在一个销售线索主页里，既有销售线索状态的展示和更改，也有销售线索的相关记录。那么，我们需要根据页面上的不同功能进行拆分。</p>
-<h4 id="按数据类型-参数拆分"><a href="#按数据类型-参数拆分" class="headerlink" title="按数据类型/参数拆分"></a>按数据类型/参数拆分</h4><p>比如对于功能“允许用户上传多种类型的金融产品”来说，业务上包含了用户通过上传金融主数据和合同文件两种类型。如果这两种类型涉及到的开发工作量都不小的话，那么可以按 通过金融主数据上传多种类型金融产品 和 通过合同文件上传 这两个用户故事。</p>
-<p>这个拆分方法需要 BA 多和开发沟通，了解实际开发过程中的工作量，进而合理拆分。</p>
-<h4 id="按业务规则拆分"><a href="#按业务规则拆分" class="headerlink" title="按业务规则拆分"></a>按业务规则拆分</h4><p>比如在经销商分配上有多种业务规则，包括自动分配经销商、手动分配经销商、重新分类经销商。每种分配方法都有自己的规则，所以以此可以拆分开。</p>
-<h4 id="按-CRUD-拆分"><a href="#按-CRUD-拆分" class="headerlink" title="按 CRUD 拆分"></a>按 CRUD 拆分</h4><p>这是拆分用户故事的一个基本方法。CRUD 其实是数据库操作中的增加(Create)、检索(Retrieve)、更新(Update)和删除(Delete)几个单词的首字母简写。</p>
-<p>通常 “Create” 相关的 story 需要先开发，才能进行后续的 “RUD”。比如想要有一个查看线索状态的功能，那么需要先允许用户标记线索状态；想要查看线索的相关记录，需要用户先在线索主页上进行记录 (写入操作)。</p>
-<p>当然，在实际开发中为了加快开发进度和减少开发间的依赖，在 “Create” 相关的 story 还没开发完成时，其他 story 仍可并行开发，只是在结卡 (desk check) 时需要开发造测试数据以及直接改数据表进行演示。</p>
-<h4 id="一个重要思想–避免横向拆分，尽量纵向拆分"><a href="#一个重要思想–避免横向拆分，尽量纵向拆分" class="headerlink" title="一个重要思想–避免横向拆分，尽量纵向拆分"></a>一个重要思想–避免横向拆分，尽量纵向拆分</h4><p>在用户故事拆分过程中，无论遇到多大困难，都要避免横向拆分，尽量纵向拆分。</p>
-<p>我在刚开始跟着 senior BA 拆分时踩过这个坑，后果是开发结束后验证起来非常麻烦，而且会遗漏场景。背景是业务上想改变已有的线索状态和活动的结构，但是我们的 UX 因为资源不到位，所以前端 UI 设计一直没有产出。项目上开发出身的 senior BA 认为没有 UI，可以先从后端上进行开发。于是他拆出的 story 包括在活动历史表里进行记录、根据发生的活动进行状态的流转等一系列涉及建表、存储数据、处理数据相关的卡。妥妥地把数据库这一层给拆了出来。结果就是开发过程中开发会不断来和 BA 确认数据库字段的问题，开发结束后验证时需要看数据库里的变化。</p>
-<p><img src="https://pictures-1301593891.cos.ap-nanjing.myqcloud.com/vertical_split_stories.png"></p>
-<p>后面反思这个问题，要想避免这种情况，最好是能通过前端界面进行验证的。没有 UI 图时，BA 可以先产出低保真的图，能画清楚页面的大致结构就行，后面再对 UI 进行美化。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/17/%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BA%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="yanan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/17/%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BA%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">如何新建一篇博客</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-17 16:52:55" itemprop="dateCreated datePublished" datetime="2021-07-17T16:52:55+08:00">2021-07-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-14 16:39:25" itemprop="dateModified" datetime="2021-11-14T16:39:25+08:00">2021-11-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">技术学习</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="如何新建一篇博客"><a href="#如何新建一篇博客" class="headerlink" title="如何新建一篇博客"></a>如何新建一篇博客</h2><h2 id="最简单的命令"><a href="#最简单的命令" class="headerlink" title="最简单的命令"></a>最简单的命令</h2><ul>
-<li>进入到博客目录</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /文件目录</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>新建一篇博客</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;My New Post&quot;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>本地效果展示</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>推送到 git</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/17/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="yanan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/17/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-17 16:24:04" itemprop="dateCreated datePublished" datetime="2021-07-17T16:24:04+08:00">2021-07-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-14 16:37:39" itemprop="dateModified" datetime="2021-11-14T16:37:39+08:00">2021-11-14</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-beginning"><a href="#Quick-beginning" class="headerlink" title="Quick beginning"></a>Quick beginning</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -705,6 +406,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E4%BA%A7%E5%93%81%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">后端产品的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E4%BA%A7%E5%93%81%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">后端产品的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E4%BA%A7%E5%93%81%E4%BD%BF%E7%94%A8%E4%BA%BA%E6%95%B0%E5%B0%91%EF%BC%8C%E4%BD%86%E8%A7%92%E8%89%B2%E4%BC%97%E5%A4%9A%E3%80%81%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%A4%8D%E6%9D%82"><span class="nav-number">2.0.1.</span> <span class="nav-text">后端产品使用人数少，但角色众多、权限管理复杂</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E4%BA%A7%E5%93%81%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E5%A4%8D%E6%9D%82"><span class="nav-number">2.0.2.</span> <span class="nav-text">后端产品业务逻辑复杂</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E4%BA%A7%E5%93%81%E7%9A%84%E4%BD%BF%E7%94%A8%E9%80%9A%E5%B8%B8%E9%9C%80%E8%A6%81%E5%9F%B9%E8%AE%AD"><span class="nav-number">2.0.3.</span> <span class="nav-text">后端产品的使用通常需要培训</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%9A%E5%8A%A1%E5%88%86%E6%9E%90%E5%B8%88%E9%9C%80%E8%A6%81%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%8A%80%E6%9C%AF%E7%9F%A5%E8%AF%86"><span class="nav-number">3.</span> <span class="nav-text">业务分析师需要学习的技术知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="nav-number">3.1.</span> <span class="nav-text">网页相关知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E5%89%8D%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF"><span class="nav-number">3.1.1.</span> <span class="nav-text">网页前后端技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="nav-number">3.1.2.</span> <span class="nav-text">浏览器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%8D%8F%E8%AE%AE%E5%92%8C%E6%A6%82%E5%BF%B5"><span class="nav-number">3.1.3.</span> <span class="nav-text">相关协议和概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Web-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">3.1.4.</span> <span class="nav-text">Web 服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E3%80%81Cookie%E3%80%81Session"><span class="nav-number">3.1.5.</span> <span class="nav-text">缓存、Cookie、Session</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD"><span class="nav-number">3.1.6.</span> <span class="nav-text">页面加载</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="nav-number">3.2.</span> <span class="nav-text">数据库相关知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E9%97%B4%E6%95%B0%E6%8D%AE%E5%AF%B9%E6%8E%A5"><span class="nav-number">3.3.</span> <span class="nav-text">系统间数据对接</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
